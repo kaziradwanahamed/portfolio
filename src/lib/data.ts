@@ -27,7 +27,6 @@ export const profile = {
 export const about = [
   "I'm an AI/Software Engineer and a final-year Software Engineering student at Daffodil International University (DIU, Batch 41). My work sits where research meets shipping — I like taking an unproven idea, proving it out, and turning it into something people actually use.",
   "My focus is agentic AI and LLM tool-use (including MCP), reinforcement learning, and ML research — alongside the full-stack and mobile engineering needed to put those models in front of real users. Recently that's meant everything from runtime safety for autonomous agents to accessibility tooling and on-device language models.",
-  "Outside of production work I serve as AI & Automation Secretary and a Data Science Lab Associate at the DIU Data Science Club, where I help other students get started with ML and automation.",
 ];
 
 export type SkillGroup = {

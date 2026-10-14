@@ -7,6 +7,11 @@ import { ArrowDown, Github, Mail, MapPin } from "lucide-react";
 import { profile } from "@/lib/data";
 import { MagneticButton } from "./ui/MagneticButton";
 
+// On GitHub Pages the site is served from /portfolio, but next/image with
+// `unoptimized` does NOT prepend basePath to the src — so we do it ourselves.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const photoSrc = `${basePath}${profile.photo}`;
+
 export function Hero() {
   const reduce = useReducedMotion();
   const [roleIndex, setRoleIndex] = useState(0);
@@ -160,7 +165,7 @@ export function Hero() {
             {/* frame */}
             <div className="absolute inset-0 overflow-hidden rounded-[1.6rem] border border-white/10 bg-ink-900 shadow-glow">
               <Image
-                src={profile.photo}
+                src={photoSrc}
                 alt={`Portrait of ${profile.name}`}
                 fill
                 priority
