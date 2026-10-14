@@ -21,7 +21,10 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
 });
 
-const siteUrl = "https://kaziradwan.vercel.app";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const siteUrl = `https://kaziradwanahamed.github.io${basePath}`;
+const ogImage = `${basePath}/kazi.jpg`;
+const faviconHref = `${basePath}/favicon.svg`;
 const description =
   "AI/Software Engineer building agentic-AI systems, ML research, and full-stack products — from runtime safety for autonomous agents to on-device language models.";
 
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
     siteName: profile.name,
     images: [
       {
-        url: "/kazi.jpg",
+        url: ogImage,
         width: 1200,
         height: 630,
         alt: profile.name,
@@ -65,11 +68,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${profile.name} — ${profile.headline}`,
     description,
-    images: ["/kazi.jpg"],
+    images: [ogImage],
   },
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: faviconHref, type: "image/svg+xml" },
     ],
   },
   robots: { index: true, follow: true },
